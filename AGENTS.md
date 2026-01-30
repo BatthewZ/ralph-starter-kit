@@ -66,11 +66,13 @@ When writing tests, prioritize integration testing over heavily mocked unit test
 - If you must mock, mock at the boundaries (external services) not internal components
 - Write tests that exercise the same code paths users will actually use
 
+**IMPORTANT:** NEVER USE `... || true` IN ASSERTIONS. IT HIDES THE SIGNAL AND MAKES THE TEST REDUNDANT AND I WILL FIGHT YOU IF YOU DO IT.
+
+NEVER WRAP ASSERTIONS IN `if (isVisible)` OR SIMILAR CONDITIONAL GUARDS. It hides the signal and makes the test. AND I WILL FIGHT YOU IF YOU DO IT. Instead, use `await expect(element).toBeVisible()` or similar.
+
 Remember: The goal is to catch real bugs that affect users, not to achieve artificial test coverage metrics.
 
-_IMPORTANT_ NEVER USE `... || true` IN ASSERTIONS. IT HIDES THE SIGNAL AND MAKES THE TEST REDUNDANT AND I WILL FIGHT YOU IF YOU DO IT.
-
-NOTE: Beyond our primary goal, we are also creating a self-healing and self-correcting agentic loop where each agent must leave insights and feedback in the form of testing and documentation for future agents to be able to understand with a fresh context. These tests and breadcrumbs are integral supporting this self-correcting, self-healing loop.
+NOTE: Beyond our primary goal, we are also creating a self-healing and self-correcting agentic loop where each agent must leave insights and feedback in the form of testing and documentation for future agents to be able to understand with a fresh context. These accuracy and helpfulness of tests and breadcrumbs are integral to supporting this self-correcting, self-healing loop.
 
 # playwright-cli
 
