@@ -16,9 +16,9 @@ TASK_FOLDER="${ROOT_DIR}/todo/cleanup"
 mkdir -p "$TASK_FOLDER"
 
 CLEANUP_PLANNER=$(cat <<EOF
-Come up with a plan on how to clean up the codebase. Spawn up to 500 subagents to look for opportunities to refactor, 
+Come up with a plan on how to clean up the codebase. Spawn up to 500 subagents to look for opportunities to refactor, fix, edge cases, abstract out duplicate code.  
 
-fix, edge cases, abstract out duplicate code.  Are the tests skipping anything vital, or written in a way that might mean that we miss important feedback?
+Are the tests skipping anything vital, or written in a way that might mean that we miss important feedback? Think hard. Be rigorous. Check the tests against the relevant source code.
 
 Once you have come up with the plan, break it down into new "tasks" that will fit in a single agent context window. Write down the tasks into:
 

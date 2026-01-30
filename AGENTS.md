@@ -68,7 +68,7 @@ When writing tests, prioritize integration testing over heavily mocked unit test
 
 **IMPORTANT:** NEVER USE `... || true` IN ASSERTIONS. IT HIDES THE SIGNAL AND MAKES THE TEST REDUNDANT AND I WILL FIGHT YOU IF YOU DO IT.
 
-NEVER WRAP ASSERTIONS IN `if (isVisible)` OR SIMILAR CONDITIONAL GUARDS. It hides the signal and makes the test. AND I WILL FIGHT YOU IF YOU DO IT. Instead, use `await expect(element).toBeVisible()` or similar.
+NEVER WRAP ASSERTIONS IN `if (isVisible)` OR SIMILAR GUARDS. It hides the signal and makes the test. AND I WILL FIGHT YOU IF YOU DO IT. Instead, use `await expect(element).toBeVisible()` or similar.
 
 Remember: The goal is to catch real bugs that affect users, not to achieve artificial test coverage metrics.
 
