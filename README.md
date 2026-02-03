@@ -48,7 +48,7 @@ Run `.scripts/init.sh` to make folders.
 
 5. Finally, do any of these
 
-- `.scripts/ralph.sh`
+- `.scripts/ralph.sh` (defaults to 20 iterations)
 - `.scripts/ralph.sh 3` (3 iterations)
 - `.scripts/ralph.sh 5 todo/00-my-feature/` (5 iterations but only pick up tasks in this folder)
 
