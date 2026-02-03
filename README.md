@@ -66,8 +66,6 @@ After you've created your app plan and prepared the initial tasks, and had ralph
 
 - _Experimental_ - `.scripts/cleanup.sh` is intended to make QA / refactor / tidy up / audit tasks and execute them.
 
-Very clearly inspired by [ghuntley](https://ghuntley.com/ralph/), [mj1618](https://github.com/mj1618/ralph-demo) and [lizTheDeveloper](https://themultiverse.school/)
-
 ## Tips
 
 - This is an exercise in trust. And token usage. ;)
@@ -93,3 +91,7 @@ If you want to get silly with it AND IF YOU WANT TO BURN TOKENS, after you've co
 2. Open up three other terminals. Do `.scripts/ralph.sh` in each.
 
 In this, you have one ralph loop creating new feature tasks, and three ralph loops consuming them and building stuff. Strap yourself in. Leave it running over night. Come back to the chaos in the morning. Expect to need to clean up some stuff, but also expect to have a whole new feature set to explore in your app.
+
+---
+
+Very clearly inspired by [ghuntley](https://ghuntley.com/ralph/), [mj1618](https://github.com/mj1618/ralph-demo) and [lizTheDeveloper](https://themultiverse.school/)
