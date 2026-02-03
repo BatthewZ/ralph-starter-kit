@@ -83,6 +83,8 @@ After you've created your app plan and prepared the initial tasks, and had ralph
 
 - Remember: You're trying to find ways to get the agents to give themselves the right feedback, through tests, docs, AGENTS etc.
 
+- CLI > MCP
+
 ## YOLO Mode
 
 If you want to get silly with it AND IF YOU WANT TO BURN TOKENS, after you've completed the [DO THIS FIRST](#do-this-first) stuff, you can unleash the ralphs:
@@ -91,6 +93,17 @@ If you want to get silly with it AND IF YOU WANT TO BURN TOKENS, after you've co
 2. Open up three other terminals. Do `.scripts/ralph.sh` in each.
 
 In this, you have one ralph loop creating new feature tasks, and three ralph loops consuming them and building stuff. Strap yourself in. Leave it running over night. Come back to the chaos in the morning. Expect to need to clean up some stuff, but also expect to have a whole new feature set to explore in your app.
+
+---
+
+## Additional Reading
+
+Here are some resources that I've found helpful or interesting.
+
+[Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/)
+[Why your coding agent keeps getting DUMBER.](https://www.youtube.com/watch?v=XQWOdQ8GM4w)
+[DeepMind Tested 180 Agent Configurations. Here's What Broke.](https://www.youtube.com/watch?v=cjm9oBiIfUE)
+[AGENTS.md outperforms skills in our agent evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
 
 ---
 
