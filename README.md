@@ -61,3 +61,29 @@ After you've created your app plan and prepared the initial tasks, and had ralph
 - _Experimental_ - `.scripts/cleanup.sh` is intended to make QA / refactor / tidy up / audit tasks and execute them.
 
 Very clearly inspired by [ghuntley](https://ghuntley.com/ralph/), [mj1618](https://github.com/mj1618/ralph-demo) and [lizTheDeveloper](https://themultiverse.school/)
+
+## Tips
+
+- This is an exercise in trust. And token usage. ;)
+
+- With prompting, unless you have very clear, specific ideas it is often works best just to describe the outcome that you want, but not how to get there. Let Claude work that out. In general, Claude knows more about most things than you do (but not as much as you do in specific key areas). So rather than say `"Add a button that lets you change the UI to see the mobile view"`, say `"the user should be able to preview on mobile and web views"`. The bot will decide how to make that happen and usually does a pretty good job. If you're too specific, you're telling the AI not to consider alternatives, some of which may be better.
+
+- When you notice that things have gone awry, you have a few options:
+
+1. Create new tasks specifically to fix issues and then run the ralph loop. You can put these tasks into todo/next and use `.scripts/ralph-next.sh` to prioritise them.
+2. Delete whatever's not working and rebuild with a different prompt, or after udpating AGENTS.md. Rebuilding is cheap and fast with ralph loops. Code becomes disposable.
+
+- You are going to have to study the cause and effect of your prompts and approaches.
+
+- If you want to do code review, the main things you need to focus on are the architectural decisions and the tests.
+
+- Remember: You're trying to find ways to get the agents to give themselves the right feedback, through tests, docs, AGENTS etc.
+
+## YOLO Mode
+
+If you want to get silly with it AND IF YOU WANT TO BURN TOKENS, after you've completed the [DO THIS FIRST](#do-this-first) stuff, you can unleash the ralphs:
+
+1. In one terminal, do `.scripts/planner-ralph.sh`. This will come up with 20 new feature ideas for your app and build new task files for each one. You can specify the loop count: `.scripts/planner-ralph.md 5`
+2. Open up three other terminals. Do `.scripts/ralph.sh` in each.
+
+In this, you have one ralph loop creating new feature tasks, and three ralph loops consuming them and building stuff. Strap yourself in. Leave it running over night. Come back to the chaos in the morning. Expect to need to clean up some stuff, but also expect to have a whole new feature set to explore in your app.
