@@ -30,10 +30,10 @@ EOF
 for i in $(seq 1 "${ITERATIONS}"); do
   # Run agent and pretty-print each line to stdout via node parser
   # Important: don't let a failing agent/node invocation kill the whole loop.
+
   set +e
   claude "$RALPH" --model opus --print --dangerously-skip-permissions --include-partial-messages --verbose --output-format stream-json | node "${PARSER}"
-  # agent --model claude-4.5-opus --output-format stream-json --stream-partial-output --sandbox disabled --browser --print --force "$RALPH" \
-  #   | node "${PARSER}"
+    
   status=$?
   set -e
 

@@ -33,9 +33,7 @@ for i in $(seq 1 "${ITERATIONS}"); do
   # Run agent and pretty-print each line to stdout via node parser
   # Important: don't let a failing agent/node invocation kill the whole loop.
   set +e
-  claude "$RALPH" --model opus --print --dangerously-skip-permissions --include-partial-messages --verbose --output-format stream-json | node "${PARSER}"
-  # agent --model gpt-5.2-codex --output-format stream-json --stream-partial-output --sandbox disabled --browser --print --force "$RALPH" \
-  #   | node "${PARSER}"
+  claude "$RALPH" --model opus --print --dangerously-skip-permissions --include-partial-messages --verbose --output-format stream-json | node "${PARSER}"  
   status=$?
   set -e
 

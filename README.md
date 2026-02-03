@@ -25,11 +25,11 @@ You then need a stopping point to get feedback on how it's going. Look at the te
 
 The most important things you need to be aware is the intended architecture and outcomes of the app, and whether or not the tests safeguard those outcomes. The tests must give good feedback to new agents, and have the reason behind the tests documented as comments at the beginning of the test file.
 
-## Init
+## DO THIS FIRST.
 
 Run `.scripts/init.sh` to make folders.
 
-1. Have a chat with an agent about your app idea. Discuss architecture and tech choices.
+1. Have a chat with an agent about your app idea. Discuss architecture and tech stack choices.
 2. Once you're satisfied that it has a deep understanding of your vision, tell it:
 
 > I need you to plan this application to build. Have phases where the important features are done in the first phase and so on. Include tests of functionality, but don't focus on it too much. Never include time estimations or time considerations - instead, think in dependency chains. Write this out to plans/plan.md.
@@ -40,22 +40,24 @@ Run `.scripts/init.sh` to make folders.
 
 4. (optional): If you have a particular ideas on project structure, create an example structure in examples/
 
-5. Finally, do `.scripts/ralph.sh` or `.scripts/ralph.sh 3` for only three iterations (~3 tasks).
+5. Finally, do any of these
+
+- `.scripts/ralph.sh`
+- `.scripts/ralph.sh 3` (3 iterations)
+- `.scripts/ralph.sh 5 todo/00-my-feature/` (5 iterations but only pick up tasks in this folder)
 
 ## Guide
 
 After you've created your app plan and prepared the initial tasks, and had ralph loop over it, here are things you can try.
 
-- Use `.scripts/planner.sh` to create new features based on the plan. It will decide what to come up with. Its ideas are often surprisingly good. You can leave the planner running to generate features/task files, while other ralphs are consuming them and building.
+- Use `.scripts/planner-ralph.sh` to create new features based on the plan. It will decide what to come up with. Its ideas are often surprisingly good. You can leave the planner running to generate features/task files, while other ralphs are consuming them and building.
 
-- Correct them by updating AGENTS.md, by updating the scripts, or by adding new tasks (ie).
+- Correct them by updating AGENTS.md, by updating the scripts, or by adding new tasks (eg `.scripts/task-maker.sh "The auth page seems to be getting API errors. Investigate how to fix."`).
 
-- If you want to add specific tasks, use the `task-planner` agent to help.
+- If you want to prioritise certain tasks, copy/paste the generated tasks into `todo/next` and use `.scripts/ralph-next.sh`
 
-- If you want to prioritise certain tasks, copy/paste the generated tasks into `todo/next` and use `.scripts/ralph-next`
+- If somehow your agents are interrupted mid-task (token limit hit, laptop went to sleep etc), use `.scripts/ralph-continue.sh`.
 
-- If somehow your agents are interrupted mid-task (token limit hit, laptop went to sleep etc), use `ralph-continue.sh`.
+- _Experimental_ - `.scripts/cleanup.sh` is intended to make QA / refactor / tidy up / audit tasks and execute them.
 
-- _Experimental_ - `.scripts/cleanup.sh` is intended to make QA / refactor / tidy up / audit tasks and execute them. But I haven't tried it yet because I ran out of tokens this week :D Try it out. Let me know if it works. ;)
-
-Very clearly inspired by [ghuntley](https://ghuntley.com/ralph/) and [mj1618](https://github.com/mj1618/ralph-demo)
+Very clearly inspired by [ghuntley](https://ghuntley.com/ralph/), [mj1618](https://github.com/mj1618/ralph-demo) and [lizTheDeveloper](https://themultiverse.school/)

@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cleanup() {
-  echo "Ctrl+C detected! Performing cleanup..."
-  exit 1
-}
-trap cleanup SIGINT
-
 ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." &>/dev/null && pwd)"
 
 empty_dirs=(

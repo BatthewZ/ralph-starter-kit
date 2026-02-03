@@ -8,6 +8,19 @@
 
 0e. study src/util/ to see which project util functions already exist.
 
+---
+
+## Guides
+
+Writing tests? Read plans/guides/tests.md
+Creating tasks? Read plans/guides/creating-tasks.md
+Need to use a browser? Read plans/guides/browser.md
+Implementing a feature? Read plans/guides/feature.md
+
+---
+
+# Rules
+
 1. Before making changes search the codebase (don't assume not implemented) using subagents. You may use up to 500 parallel subagents for all operations but only 1 subagent for build/tests of the app.
 
 2. After implementing functionality or resolving problems, run the tests for that unit of code that was improved. Run typescript `tsc --noEmit` over the files that you have changed as a part of the testing. If functionality is missing then it is your job to add it as per the application specifications.
@@ -26,15 +39,15 @@
 
 9. When you learn something about how to build, run or test the project make sure you update AGENTS.md using a subagent, but keep it brief. For example if you run commands multiple times before learning the correct command then that file should be updated.
 
-10. If you find opportunities to reduce code duplication, spawn a subagent to add a shared function in src/util/ with {toolName}.ts, and add it to src/util/index.ts, and then update the codebase to use the new tool where relevant.
+10. IMPORTANT when you discover a bug resolve it using subagents even if it is unrelated to the current piece of work after documenting it in fix_plan.md
 
-11. If you see an opportunity to reduce code duplication by using util functions in src/util/, do so.
+11. If you find opportunities to reduce code duplication, spawn a subagent to add a shared function in src/util/ with {toolName}.ts, and add it to src/util/index.ts, and then update the codebase to use the new tool where relevant.
 
 12. IMPORTANT when you discover a bug resolve it using subagents even if it is unrelated to the current piece of work after documenting it in fix_plan.md
 
 13. The tests for the feature should be located in the feature folder next to the source code.
 
-14. Look at example-structure/ folder structure (if not empty) to see how to lay the project out into clean, maintainable, searchable project structure. Never update example-structure/ folder.
+14. Look at example-structure/ folder structure (if not empty) to see how to lay the project out. Otherwise, use consistent patterns to keep the project structure clean and maintainable.
 
 15. Keep AGENTS.md up to date with information on how to build, run or test the project and your learnings to optimise the build/test loop using a subagent.
 
@@ -44,7 +57,7 @@
 
 18. DO NOT IMPLEMENT PLACEHOLDER OR SIMPLE IMPLEMENTATIONS. WE WANT FULL IMPLEMENTATIONS. DO IT OR I WILL YELL AT YOU
 
-19. If you find inconsistencies in the plans/\*, use a subagent to update the specs.
+19. If you find inconsistencies in the plans/plan.md, use a subagent to update the specs.
 
 20. If you ever need human intervention to complete a task, use a subagent to add concise requirements to human_tasks.md. Include a datetime.
 

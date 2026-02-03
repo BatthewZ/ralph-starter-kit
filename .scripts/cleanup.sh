@@ -16,21 +16,22 @@ TASK_FOLDER="${ROOT_DIR}/todo/cleanup"
 mkdir -p "$TASK_FOLDER"
 
 CLEANUP_PLANNER=$(cat <<EOF
-Come up with a plan on how to clean up the codebase. Spawn up to 500 subagents to look for opportunities to refactor, fix, edge cases, abstract out duplicate code.  
+Read plans/guides/creating-tasks.md. Come up with a plan on how to clean up the codebase. Spawn up to 100 subagents to look for opportunities to refactor, fix, edge cases, abstract out duplicate code, but do not implement changes.  
 
-Are the tests skipping anything vital, or written in a way that might mean that we miss important feedback? Think hard. Be rigorous. Check the tests against the relevant source code.
+Are the tests skipping anything vital, or written in a way that might mean that we miss important feedback? Are there any unfinished integrations? Think hard. Be rigorous. Check the tests against the relevant source code.
 
-Once you have come up with the plan, break it down into new "tasks" that will fit in a single agent context window. Write down the tasks into:
+We want the code to be accurate and maintainable. Clean, but never sacrifice accuracy for simplicity.
 
-${TASK_FOLDER}/{task-name}.pending.md
+Once you have come up with the plan, break it down into new tasks that will fit in a single agent context window. Write down the tasks into:
+
+${TASK_FOLDER}/{feature-name}/{task-name}.pending.md
 EOF
 )
 
 # Run agent and pretty-print each line to stdout via node parser
 set +e
 claude "$CLEANUP_PLANNER" --model opus --print --dangerously-skip-permissions --include-partial-messages --verbose --output-format stream-json | node "${PARSER}"
-# agent --model claude-4.5-opus --output-format stream-json --stream-partial-output --sandbox disabled --browser --print --force "$RALPH" \
-#   | node "${PARSER}"
+
 status=$?
 set -e
 
@@ -42,4 +43,4 @@ TASK_COUNT=$(find "$TASK_FOLDER" -type f | wc -l)
 
 echo "Cleanup tasks created. Unleashing Ralph!"
 
-"${ROOT_DIR}/.scripts/ralph.sh" "$TASK_COUNT" "$TASK_FOLDER"
+"${ROOT_DIR}/.scripts/ralph.sh" 20 "$TASK_FOLDER"
