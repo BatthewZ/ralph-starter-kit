@@ -18,7 +18,7 @@ Plan:
 Your job is to have a clear understanding of the outcomes that you want your app and its features to achieve. Your job is now to plan - to consider architectural tradeoffs and to find ways to build and maintain a self-healing, self-correcting pipeline.
 
 Build:
-Unleash the ralphs! To begin with, maybe build 3 features out to see where they're going right, and where they need assistance.
+Unleash the ralphs! To begin with, maybe build 3 features out (~15 task files) to see where they're going right, and where they need assistance.
 
 Test / Document:
 You then need a stopping point to get feedback on how it's going. Look at the tests they're writing, and consider them against your understanding of the desired project outcomes.
