@@ -25,7 +25,13 @@ You then need a stopping point to get feedback on how it's going. Look at the te
 
 The most important things you need to be aware is the intended architecture and outcomes of the app, and whether or not the tests safeguard those outcomes. The tests must give good feedback to new agents, and have the reason behind the tests documented as comments at the beginning of the test file.
 
-## DO THIS FIRST.
+## You need
+
+- NodeJS
+- Claude CLI
+- Claude subscription (ideally a chonky one)
+
+## DO THIS FIRST
 
 Run `.scripts/init.sh` to make folders.
 
