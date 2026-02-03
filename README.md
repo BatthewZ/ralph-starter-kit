@@ -100,10 +100,10 @@ In this, you have one ralph loop creating new feature tasks, and three ralph loo
 
 Here are some resources that I've found helpful or interesting.
 
-[Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/)
-[Why your coding agent keeps getting DUMBER.](https://www.youtube.com/watch?v=XQWOdQ8GM4w)
-[DeepMind Tested 180 Agent Configurations. Here's What Broke.](https://www.youtube.com/watch?v=cjm9oBiIfUE)
-[AGENTS.md outperforms skills in our agent evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
+- [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/)
+- [Why your coding agent keeps getting DUMBER.](https://www.youtube.com/watch?v=XQWOdQ8GM4w)
+- [DeepMind Tested 180 Agent Configurations. Here's What Broke.](https://www.youtube.com/watch?v=cjm9oBiIfUE)
+- [AGENTS.md outperforms skills in our agent evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
 
 ---
 
